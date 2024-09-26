@@ -21,7 +21,7 @@ export class AppComponent {
   constructor(private http: HttpClient) {}
 
   onSubmitArtist() {
-    this.http.post('http://localhost:8080/api/artist/submit', this.artist)
+    this.http.post('https://calculated.onrender.com/api/artist/submit', this.artist)
       .subscribe(response => {
         console.log('Artist details submitted:', response);
         alert('Form submitted successfully');
