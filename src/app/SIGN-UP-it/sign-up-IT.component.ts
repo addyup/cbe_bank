@@ -15,8 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,],
-  templateUrl: './sign-up-it.component.html',
-  styleUrl: './sign-up-it.component.less'
+  templateUrl: './sign-up-IT.component.html',
+  styleUrl: './sign-up-IT.component.less'
 })
 export class SignUpITComponent {
  
