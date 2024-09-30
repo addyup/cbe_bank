@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, MatSidenavModule,
+  imports: [ FormsModule, MatSidenavModule,
     MatListModule,
     MatIconModule,
     MatToolbarModule,
