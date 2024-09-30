@@ -1,3 +1,7 @@
-@if(router.url !== '/signup') {
-    <button type="button" class="btn btn-warning" (click)="navigateToSignup()">Sign Up Artist</button>
+@if(router.url !== '/signupARTIST' && router.url !== '/SIGNUPit') {
+    <button type="button" class="btn btn-custom" (click)="navigateToSignupARTIST()">Sign Up Artist</button>
+   }
+
+   @if(router.url !== '/signupARTIST' && router.url !== '/SIGNUPit') {
+    <button type="button" class="btn btn-custom" (click)="navigateToSIGNUPit()">Apply for IT</button>
    }

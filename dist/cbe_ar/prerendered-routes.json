@@ -1,5 +1,6 @@
 {
   "routes": [
-    "/signup"
+    "/signupARTIST",
+    "/SIGNUPit"
   ]
 }

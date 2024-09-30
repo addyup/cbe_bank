@@ -12,8 +12,12 @@ export class ButtonsCommonComponent {
 
   constructor( public router: Router) {}
 
-  navigateToSignup() {
-    this.router.navigate(['/signup']);
+  navigateToSignupARTIST() {
+    this.router.navigate(['/signupARTIST']);
+  }
+
+  navigateToSIGNUPit() {
+    this.router.navigate(['/SIGNUPit']);
   }
 
 }

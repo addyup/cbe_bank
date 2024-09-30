@@ -1,0 +1,105 @@
+
+<mat-sidenav-container class="sidenav-container">
+    <!-- Side Navigation -->
+    <mat-sidenav #sidenav [(opened)]="opened" mode="side" class="sidenav" [style.width.px]="opened ? 180 : 64">
+      <mat-nav-list>
+        <a mat-list-item href="#">
+          <mat-icon>home</mat-icon>
+         @if(opened) { <span>Home</span>   }
+        </a>
+        <a mat-list-item href="#">
+          <mat-icon>info</mat-icon>
+         @if(opened) { <span>About</span>  }
+        </a>
+        <a mat-list-item href="#">
+          <mat-icon>build</mat-icon>
+         @if(opened) { <span>Services</span> }
+        </a>
+        <a mat-list-item href="#">
+          <mat-icon>contact_mail</mat-icon>
+         @if(opened) { <span>Contact</span>}
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <!-- Main Content -->
+    <mat-sidenav-content class="main-content">
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="opened = !opened">
+          <mat-icon>{{ opened ? 'close' : 'menu' }}</mat-icon>
+        </button>
+        <span class="text-warning">Caculated Bliss</span>
+      </mat-toolbar>
+      <div class="content">
+        <div class="container">
+          <div class="container mt-5" style="background-color: purple;">
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header bg-warning text-white text-center">
+                    <h3 style="color: rgba(80, 76, 76, 0.688);">Candidate Submission</h3>
+                    <h5 style="color: rgba(84, 56, 41, 0.468);">Please click the submit button only <span style="color: rgba(170, 78, 78, 0.411);">once</span>.</h5>
+                  </div>
+                  <div class="card-body">
+                    
+                    
+                    <form (ngSubmit)="onSubmitCandidate()" #candidateForm="ngForm">
+                      
+                      <div class="form-group mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input
+                          type="email"
+                          id="email"
+                          class="form-control"
+                          [(ngModel)]="artist.email"
+                          name="email"
+                          required
+                        />
+                      </div>
+                      <div class="form-group mb-3">
+                        <label for="email" class="form-label">Bio</label>
+                        <input
+                          type="bio"
+                          id="bio"
+                          class="form-control"
+                          [(ngModel)]="artist.bio"
+                          name="email"
+                          required
+                        />
+                      </div>
+                      
+                      <div class="form-group mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input
+                          type="text"
+                          id="name"
+                          class="form-control"
+                          [(ngModel)]="artist.name"
+                          name="name"
+                          required
+                        />
+                      </div>
+
+                      
+
+                      
+                      
+                      <button type="submit" class="btn custom-purple w-100" [disabled]="!candidateForm.form.valid">
+                        Submit
+                      </button>
+                      <a href="http://click.linksynergy.com/fs-bin/click?id=tAaIuszgIHY&offerid=311675&type=3&subid=0&LSNSUBSITE=LSNSUBSITE" class="text-warning">Rakuten Advertising Welcome Program</a>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+  
+  
+  
