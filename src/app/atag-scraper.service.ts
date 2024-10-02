@@ -12,7 +12,7 @@ export class ATagScraperService {
   constructor(private http: HttpClient) {}
 
   getATagResults(url: string): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}?url=${encodeURIComponent(url)}`)
+    return this.http.get<string[]>(`${this.apiUrl}`)
       .pipe(
         map((results: string[]) => {
           return results.map(result => {
