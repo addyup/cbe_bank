@@ -1,0 +1,12 @@
+
+
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; background-color: aliceblue;">
+    <div>
+      <h2 class="text-center mb-4">New events from Ticketmaster</h2>
+      <ul class="list-group">
+        @for (result of aTagResults; track result) { <li class="text-left mb-4">
+          <span [innerHTML]="result"></span>
+        </li> }
+      </ul>
+    </div>
+  </div>
