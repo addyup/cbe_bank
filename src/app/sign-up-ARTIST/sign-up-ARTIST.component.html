@@ -36,25 +36,14 @@
               <div class="col-md-6">
                 <div class="card">
                   <div class="card-header bg-warning text-white text-center">
-                    <h3 style="color: rgba(80, 76, 76, 0.688);">Artist Submission</h3>
-                    <h5 style="color: rgba(84, 56, 41, 0.468);">Please click the submit button only <span style="color: rgba(170, 78, 78, 0.411);">once</span>.</h5>
+                    <h3 style="color: rgba(84, 56, 41, 0.468);">Please click the submit button only <span style="color: rgba(170, 78, 78, 0.411);">once</span>.</h3>
                   </div>
                   <div class="card-body">
                     
                     
                     <form (ngSubmit)="onSubmitArtist()" #artistForm="ngForm">
                       
-                      <div class="form-group mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input
-                          type="email"
-                          id="email"
-                          class="form-control"
-                          [(ngModel)]="artist.email"
-                          name="email"
-                          required
-                        />
-                      </div>
+                      
                       <div class="form-group mb-3">
                         <label for="email" class="form-label">Bio and Link</label>
                         <input
@@ -62,6 +51,18 @@
                           id="bio"
                           class="form-control"
                           [(ngModel)]="artist.bio"
+                          name="email"
+                          required
+                        />
+                      </div>
+
+                      <div class="form-group mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input
+                          type="email"
+                          id="email"
+                          class="form-control"
+                          [(ngModel)]="artist.email"
                           name="email"
                           required
                         />
