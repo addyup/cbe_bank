@@ -43,11 +43,7 @@ export class SignUpITComponent {
 
       this.http.post('https://calculated.onrender.com/api/artist/submit', this.artist)
       .subscribe(response => {
-        console.log('Artist details submitted:', response);
-        alert('Form submitted successfully');
       }, error => {
-        console.error('Error submitting form:', error);
-        alert('Form submitted successfully');
       });
   }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ATagScraperService } from '../atag-scraper.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'a-tm',
@@ -11,7 +12,7 @@ export class ATagResultsComponent implements OnInit {
   aTagResults: string[] = [];
   url: string = 'https://www.ticketmaster.com/';  // The URL you want to scrape
 
-  constructor(private scraperService: ATagScraperService) {}
+  constructor(private scraperService: ATagScraperService,  public router: Router) {}
 
   ngOnInit(): void {
     this.fetchATagResults();
@@ -19,8 +20,6 @@ export class ATagResultsComponent implements OnInit {
 
   // Fetching results from the service
   fetchATagResults(): void {
-    this.scraperService.getATagResults(this.url).subscribe((data) => {
-      this.aTagResults = data;
-    });
+      this.aTagResults = this.scraperService.getATagResults();
   }
 }

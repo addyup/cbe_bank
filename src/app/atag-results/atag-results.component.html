@@ -1,6 +1,6 @@
 
-
-  <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; background-color: aliceblue;">
+@if(router.url !== '/signupARTIST' && router.url !== '/SIGNUPit') {
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
     <div>
       <h2 class="text-center mb-4">New events from Ticketmaster</h2>
       <ul class="list-group">
@@ -10,3 +10,4 @@
       </ul>
     </div>
   </div>
+}

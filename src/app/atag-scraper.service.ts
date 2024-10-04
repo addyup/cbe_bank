@@ -11,32 +11,43 @@ export class ATagScraperService {
 
   constructor(private http: HttpClient) {}
 
-  get_headers() {
+
+  getATagResults(): string[] {
+    let cleanedResults: string[] = [];
+  
     const headers = new HttpHeaders({
+      'Access-Control-Allow-Origin': '*', // add your required headers here
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',  // You can specify allowed origin here if needed.
     });
-
-  getATagResults(url: string): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}`, { headers })
-      .pipe(
-        map((results: string[]) => {
-          return results.map(result => {
-            // Remove "Text:" and "Link:"
-            let cleanedResult = result.replace(/Text: /g, '').replace(/Link: /g, '');
-
-            // Prefix baseUrl to all links starting with " /"
-            cleanedResult = cleanedResult.replace(' /', `${this.baseUrl}/`);
-
-            // Add space after commas
-            cleanedResult = cleanedResult.replace(/,([^ ])/g, ', $1');
-
-            // Make any string starting with 'https' a clickable link
-            cleanedResult = cleanedResult.replace(/(https:\/\/[^\s]+)/g, '<a class="link-warning" href="$1" target="_blank">$1</a>');
-
-            return cleanedResult;
-          });
-        })
-      );
+  
+    this.http.get<string[]>(
+      'https://calculated.onrender.com/api/artist/a-tm'
+      // 'http://localhost:8080/api/artist/a-tm'
+      , { headers })
+      .subscribe(response => {
+        cleanedResults = response.map(result => {
+          // Remove "Text:" and "Link:"
+          let cleanedResult = result.replace(/Text: /g, '').replace(/Link: /g, '');
+  
+          // Prefix baseUrl to all links starting with " /"
+          cleanedResult = cleanedResult.replace(' /', `${this.baseUrl}/`);
+  
+          // Add space after commas
+          cleanedResult = cleanedResult.replace(/,([^ ])/g, ', $1');
+  
+          // Make any string starting with 'https' a clickable link
+          cleanedResult = cleanedResult.replace(/(https:\/\/[^\s]+)/g, '<a class="link-warning" href="$1" target="_blank">$1</a>');
+  
+          return cleanedResult;
+        });
+  
+      }, error => {
+      });
+  
+    return cleanedResults;
   }
+  
+    
+
+  
 }

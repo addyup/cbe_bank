@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
+import { ATagResultsComponent } from "../atag-results/atag-results.component";
 
 @Component({
   selector: 'buttons-common',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ATagResultsComponent],
   templateUrl: './buttons-common.component.html',
   styleUrl: './buttons-common.component.less'
 })

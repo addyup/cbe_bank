@@ -3,13 +3,8 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { provideHttpClient } from '@angular/common/http';
 import { environment } from './environments/environment';
-import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { appConfig } from './app/app.config';
 
-bootstrapApplication(AppComponent, {
-  providers: [
-    provideHttpClient(),
-    ...(environment.production ? [] : [AkitaNgDevtools]) // Only include DevTools in non-production environments
-  ]
-}
+bootstrapApplication(AppComponent, appConfig
 )
   .catch((err) => console.error(err));
