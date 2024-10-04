@@ -11,8 +11,14 @@ export class ATagScraperService {
 
   constructor(private http: HttpClient) {}
 
+  get_headers() {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',  // You can specify allowed origin here if needed.
+    });
+
   getATagResults(url: string): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}`)
+    return this.http.get<string[]>(`${this.apiUrl}`, { headers })
       .pipe(
         map((results: string[]) => {
           return results.map(result => {
